@@ -1,0 +1,38 @@
+{
+  "name": "job_tags",
+  "strict": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "people_tags": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "fingerprint": { "type": "string" },
+            "tags": {
+              "type": "array",
+              "description": "Lista tagów pasujących do wykonywanej pracy",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "IT",
+                  "transport",
+                  "edukacja",
+                  "medycyna",
+                  "praca z ludźmi",
+                  "praca z pojazdami",
+                  "praca fizyczna"
+                ]
+              }
+            }
+          },
+          "required": ["fingerprint", "tags"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["people_tags"],
+    "additionalProperties": false
+  }
+}

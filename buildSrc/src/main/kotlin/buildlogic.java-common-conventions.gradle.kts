@@ -7,6 +7,8 @@ plugins {
     java
 }
 
+group = "pl.informatysta.aid4"
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -20,6 +22,9 @@ dependencies {
 
     // Use JUnit Jupiter for testing.
     testImplementation("org.junit.jupiter:junit-jupiter:6.0.1")
+
+    // Use Mockito for mocking in tests.
+    testImplementation("org.mockito:mockito-core:5.17.0")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
