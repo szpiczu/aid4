@@ -32,7 +32,7 @@ Convention plugins under `buildSrc/src/main/kotlin/`:
 
 ## Notes
 
-- `gradle/libs.versions.toml` exists but is empty; versions are hardcoded in convention plugins.
+- `gradle/libs.versions.toml` has a `[libraries]` section with Mockito; versions are hardcoded in convention plugins.
 - No CI, no formatter, no linter config, no Docker, no README.
 - `buildSrc` uses `kotlin-dsl` plugin but its `settings.gradle.kts` references a version catalog that has no entries yet.
 - All code is `org.example.*` namespace.
