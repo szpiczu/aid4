@@ -1,5 +1,6 @@
 package org.example.app;
 
+import java.time.LocalDate;
 import java.io.IOException;
 import java.net.http.HttpClient;
 import java.nio.file.Path;
@@ -21,7 +22,8 @@ public class App {
         );
 
         List<Person> people = repository.getPeople();
-        System.out.printf("Loaded %d people%n", people.size());
+        people = PersonFilter.apply(people, LocalDate.of(2026, 1, 1));
+        System.out.printf("Filtered to %d people%n", people.size());
         people.forEach(System.out::println);
     }
 }
