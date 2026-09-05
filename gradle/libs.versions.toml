@@ -3,8 +3,8 @@
 
 [versions]
 mockito-core = "5.23.0"
-jackson-core = "3.2.2"
+jackson-databind = "3.2.2"
 
 [libraries]
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core" }
-jackson-core = { module = "tools.jackson.core:jackson-databind", version.ref = "jackson-core" }
+jackson-databind = { module = "tools.jackson.core:jackson-databind", version.ref = "jackson-databind" }

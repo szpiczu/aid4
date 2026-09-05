@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "people_tags": {
+      "type": "array",
+      "description": "List of people with their inferred tags.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fingerprint": {
+            "type": "string",
+            "description": "Unique fingerprint of the person, returned verbatim from the input."
+          },
+          "tags": {
+            "type": "array",
+            "description": "Tags inferred from the person's job description.",
+            "items": {
+              "type": "string",
+              "enum": ["IT", "transport", "edukacja", "medycyna", "praca z ludźmi", "praca z pojazdami", "praca fizyczna"]
+            }
+          }
+        },
+        "required": ["fingerprint", "tags"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["people_tags"],
+  "additionalProperties": false,
+  "examples": [
+    {
+      "people_tags": [
+        {
+          "fingerprint": "3e4f5a1b",
+          "tags": ["IT"]
+        },
+        {
+          "fingerprint": "7c8d9e0f",
+          "tags": ["transport", "praca z pojazdami"]
+        }
+      ]
+    }
+  ]
+}
