@@ -20,6 +20,8 @@ dependencies {
         implementation("org.apache.commons:commons-text:1.14.0")
     }
 
+    implementation("io.github.cdimascio:dotenv-java:3.2.0")
+
     // Use JUnit Jupiter for testing.
     testImplementation("org.junit.jupiter:junit-jupiter:6.0.1")
 

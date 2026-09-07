@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = "aid4"
 include("s01e01")
+include("s01e02")
