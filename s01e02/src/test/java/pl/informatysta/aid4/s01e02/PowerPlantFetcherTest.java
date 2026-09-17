@@ -69,7 +69,6 @@ class PowerPlantFetcherTest {
         assertEquals("PP-B", beta.code());
     }
 
-    @SuppressWarnings("unchecked")
     @Test
     void fetch_usesCacheWhenFileExists() throws Exception {
         String json = """

@@ -4,6 +4,8 @@ plugins {
 
 dependencies {
     implementation(libs.jackson.databind)
+    implementation("io.github.cdimascio:dotenv-java:3.2.0")
+    implementation(project(":s01e01"))
 }
 
 application {

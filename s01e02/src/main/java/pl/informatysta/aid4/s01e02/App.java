@@ -2,9 +2,7 @@ package pl.informatysta.aid4.s01e02;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.http.HttpClient;
 import java.nio.file.Path;
-import java.util.List;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
@@ -22,12 +20,8 @@ public class App {
             System.exit(1);
         }
 
-        boolean forceRefresh = args.length > 0 && "--force-fetch".equals(args[0]);
-
-        Path cachePath = Path.of(System.getProperty("user.home"), ".aid4", "cache", "power_plants.cache");
-        PowerPlantFetcher fetcher = new PowerPlantFetcher(HttpClient.newHttpClient(), apiKey, cachePath, forceRefresh);
-        List<PowerPlant> plants = fetcher.fetch();
-        System.out.printf("Power plants: %d%n", plants.size());
-        plants.forEach(System.out::println);
+        var peoplePath = Path.of(System.getProperty("user.home"), ".aid4", "cache", "tagged.cache");
+        var peopleRepository = new PeopleRepository(peoplePath);
+        peopleRepository.fetchPeople().forEach(System.out::println);
     }
 }
